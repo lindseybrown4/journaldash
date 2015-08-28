@@ -41,6 +41,7 @@ angular.module('mainCtrl', [])
 		Auth.logout(); 
 		$location.path('/logout');
 	}
+
 });
 
 

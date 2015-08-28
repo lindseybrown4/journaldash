@@ -7,9 +7,14 @@
 	<!-- BootStrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
+	<!-- jQuery -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+
 	<!-- Angular -->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js"></script>
+
+
 
 	<!-- Services -->
 	<script type="text/javascript" src="app/services/authService.js"></script>
@@ -22,7 +27,6 @@
 	<script type="text/javascript" src="app/controllers/storyCtrl.js"></script>
 
 	<!-- JavaScript Files -->
-<!-- 	// <script type="text/javascript" src="app/app.routes.js"></script> -->
 	<script type="text/javascript" src="app/app.js"></script>
 
 
@@ -43,6 +47,7 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li ng-if="!main.loggedIn"><a href="/login">Login</a></li>
 				<li ng-if="!main.loggedIn"><a href="/signup">Signup</a></li>
+				<li ng-if="!main.loggedIn"><a href="/about">About</a></li>
 				<li ng-if="main.loggedIn"><a href="#">Hello {{ main.user.username }}</a></li>
 				<li ng-if="main.loggedIn"><a href="#" ng-click="main.doLogout()">Logout</a></li>
 			</ul>

@@ -27,5 +27,9 @@ angular.module('appRoutes', ['ngRoute'])
 		templateUrl: 'app/views/pages/signup.html'
 	})
 
+	.when('/about', {
+		templateUrl: 'app/views/pages/about.html'
+	})
+
 	$locationProvider.html5Mode(true);
 })
