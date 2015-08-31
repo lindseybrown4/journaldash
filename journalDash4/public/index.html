@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+	<base href='/'>
+	<title>User Story</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	
+
+
+</head>
+<body ng-controller="MainController as main">
+
+<header>
+	<div class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<a href="/" class="navbar-brand"><span class="glyphicon glyphicon-book"></span>My Journal</a>
+			</div>
+
+			<ul class="nav navbar-nav">
+				<li><a href="/users"></a></li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li ng-if="!main.loggedIn"><a href="/login">Login</a></li>
+				<li ng-if="!main.loggedIn"><a href="/signup">Signup</a></li>
+				<li ng-if="main.loggedIn" || "!main.loggedIn"><a href="/about">About</a></li>
+
+				
+<!-- <li ng-if="main.loggedIn" dropdown>
+  <a href="#" dropdown-toggle>{{ main.user.username }}'s Account <span class="caret"></span></a>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="">About</a></li>
+    <li><a href="">About</a></li>
+    <li><a href="">About</a></li>
+    <li class="divider" role="presentation"></li>
+    <li><a ng-click="main.doLogout()">Logout</a></li>
+  </ul>
+</li> -->
+
+
+ <div dropdown on-toggle="toggled(open)" ng-controller="MainController">
+      <a href id="simple-dropdown" dropdown-toggle>
+       {{ main.user.username }}'s Account
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="simple-dropdown">
+        <li ng-repeat="choice in items">
+          <a href>{{choice}}</a>
+        </li>
+      </ul>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<li ng-if="main.loggedIn"><a href="#" ng-click="main.doLogout()">Logout</a></li>
+			</ul>
+		</div>
+	</div>
+
+
+</header>
+
+
+<main class="container">
+
+	<div ng-view></div>
+</main>
+
+
+	<!-- Angular -->
+	<script type="text/javascript" src="/libs/bower_components/angular/angular.js"></script>
+
+
+	<script type="text/javascript" src="/libs/bower_components/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="/libs/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script type="text/javascript" src="/libs/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	
+	<!-- jQuery -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+
+	<!-- Services -->
+	<script type="text/javascript" src="app/services/authService.js"></script>
+	<script type="text/javascript" src="app/services/userService.js"></script>
+	<script type="text/javascript" src="app/services/storyService.js"></script>
+
+	<!-- Controllers -->
+	<script type="text/javascript" src="app/controllers/mainCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/userCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/storyCtrl.js"></script>
+
+	<!-- JavaScript Files -->
+	<script type="text/javascript" src="app/app.js"></script>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

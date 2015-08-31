@@ -1,6 +1,6 @@
 angular.module('mainCtrl', [])
 
-.controller('MainController', function($rootScope, $location, Auth) {
+.controller('MainController', function($rootScope, $location, Auth, $scope) {
 
 	var vm = this; 
 
@@ -41,6 +41,21 @@ angular.module('mainCtrl', [])
 		Auth.logout(); 
 		$location.path('/logout');
 	}
+
+	 vm.items = [
+	    'The first choice!',
+	    'And another choice for you.',
+	    'but wait! A third!'
+	  ];
+
+	 vm.status = {
+	    isopen: false
+	  };
+
+vm.toggled = function(open) {
+    $log.log('Dropdown is now: ', open);
+  };
+
 
 });
 

@@ -1,4 +1,4 @@
-angular.module('MyApp', ['appRoutes','mainCtrl', 'authService', 'userCtrl', 'userService', 'storyService', 'storyCtrl'])
+angular.module('MyApp', ['appRoutes','ui.bootstrap', 'mainCtrl', 'authService', 'userCtrl', 'userService', 'storyService', 'storyCtrl'])
 
 .config(function($httpProvider) {
 
@@ -6,6 +6,7 @@ angular.module('MyApp', ['appRoutes','mainCtrl', 'authService', 'userCtrl', 'use
 });
 
 angular.module('appRoutes', ['ngRoute'])
+
 
 .config(function($routeProvider, $locationProvider) {
 	
